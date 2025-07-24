@@ -16,8 +16,53 @@ class MainActivity : AppCompatActivity() {
 
         enableEdgeToEdge()
         setContentView(binding.root)
-        binding.btnChangeText.setOnClickListener {
-            binding.tvTextSalem.text="Eto android razrabotka"
+
+        var editText1 = ""
+        var editText2 = ""
+        binding.btnSum.setOnClickListener {
+            editText1 = binding.editTextNumber1.text.toString()
+            editText2 = binding.editTextNumber2.text.toString()
+
+            if (editText1 == "" || editText2 == "") {
+                binding.tvResult.text = "Not found in editText"
+            } else {
+                val result = editText1.toInt() + editText2.toInt()
+                binding.tvResult.text = result.toString()
+            }
+        }
+        binding.btnMinus.setOnClickListener {
+            editText1 = binding.editTextNumber1.text.toString()
+            editText2 = binding.editTextNumber2.text.toString()
+
+            if (editText1 == "" || editText2 == "") {
+                binding.tvResult.text = "Not found in editText"
+            } else {
+                val result = editText1.toInt() - editText2.toInt()
+                binding.tvResult.text = result.toString()
+            }
+        }
+        binding.btnMultiply.setOnClickListener {
+            editText1 = binding.editTextNumber1.text.toString()
+            editText2 = binding.editTextNumber2.text.toString()
+
+            if (editText1 == "" || editText2 == "") {
+                binding.tvResult.text = "Not found in editText"
+            } else {
+                val result = editText1.toInt() * editText2.toInt()
+                binding.tvResult.text = result.toString()
+            }
+        }
+        binding.btnDivide.setOnClickListener {
+            editText1 = binding.editTextNumber1.text.toString()
+            editText2 = binding.editTextNumber2.text.toString()
+
+            if (editText1 == "" || editText2 == "") {
+                binding.tvResult.text = "Not found in editText"
+            } else {
+                val result = editText1.toInt() / editText2.toInt()
+                binding.tvResult.text = result.toString()
+            }
         }
     }
 }
+
